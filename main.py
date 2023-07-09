@@ -30,7 +30,7 @@ with st.sidebar:
     st.selectbox( 'Select Prediction year',(year_list))
     st.selectbox( 'Select commodity to Predict Price ',(commodity_list))
     st.selectbox( 'Select commodity to Predict Price ',(priceflag_list))
-    if st.button('Say hello'):
+    if st.button('Predict'):
      st.write('Why hello there')
     else:
      st.write('Goodbye')
