@@ -26,6 +26,7 @@ category_list = price_data['category'].unique().tolist()
 
 # Add the filters. Every widget goes in here
 with st.sidebar:
+    st.selectbox( 'Enter Year for your prediction',(year_list))
     st.write("Select a range on the slider (it represents prices) to view the total number of commodities that falls within that range")
     #create a slider to hold user scores
     new_price_rating = st.slider(label = "Choose a value:",
