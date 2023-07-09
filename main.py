@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 # To set a webpage title, header and subtitle
 st.set_page_config(page_title = "Food price analysis",layout = 'wide')
-st.header("South Sudan Commodities Prices")
+st.header("Commodity Price Prediction")
 st.subheader("Interact with this dashboard using the widgets on the sidebar")
 
 
