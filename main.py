@@ -30,6 +30,10 @@ with st.sidebar:
     st.selectbox( 'Select Prediction year',(year_list))
     st.selectbox( 'Select commodity to Predict Price ',(commodity_list))
     st.selectbox( 'Select commodity to Predict Price ',(priceflag_list))
+    if st.button('Say hello'):
+     st.write('Why hello there')
+    else:
+     st.write('Goodbye')
     
     st.write("Select a range on the slider (it represents prices) to view the total number of commodities that falls within that range")
     #create a slider to hold user scores
