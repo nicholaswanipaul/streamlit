@@ -30,7 +30,7 @@ with st.sidebar:
     #create a slider to hold user scores
     new_price_rating = st.slider(label = "Choose a value:",
                                   min_value = 1.0,
-                                  max_value = 350000.0,
+                                  max_value = 35000.0,
                                  value = (3.0,4.0))
 
 
