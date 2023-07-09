@@ -69,10 +69,10 @@ with col2:
     #st.write("""#### User score of movies and their genre """)
     #rating_count_year = movies_data[score_info].groupby('genre')['score'].count()
     #rating_count_year = rating_count_year.reset_index()
-    #figpx = px.line(rating_count_year, x = 'genre', y = 'score')
-   # st.plotly_chart(figpx)
-     plot=sns.lineplot(x="Year", y="unit_price", data=df3)
-     st.pyplot(plot.get_figure())
+    figpx = px.line(df3, x='Year', y='unit_price')
+    st.plotly_chart(figpx)
+     #plot=sns.lineplot(x="Year", y="unit_price", data=df3)
+     #st.pyplot(plot.get_figure())
  # creating a bar graph with matplotlib
 st.write("""
 Average Movie Budget, Grouped by Genre
