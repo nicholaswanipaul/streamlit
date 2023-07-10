@@ -20,6 +20,11 @@ price_data.dropna()
 
 # Creating sidebar widget filters from price dataset
 year_list = price_data['Year'].unique().tolist()
+#increasing prediction year up to 2026,
+x=len(year_list)
+ year_list.add(x,2024)
+year_list.add(x+1,2025)
+year_list.add(x+2,2026)
 price_rating = price_data['unit_price'].unique().tolist()
 category_list = price_data['category'].unique().tolist()
 commodity_list = price_data['commodity'].unique().tolist()
@@ -29,7 +34,7 @@ priceflag_list=price_data['priceflag'].unique().tolist()
 with st.sidebar:
     st.selectbox( 'Select Prediction year',(year_list))
     st.selectbox( 'Select commodity to Predict Price ',(commodity_list))
-    st.selectbox( 'Select commodity to Predict Price ',(priceflag_list))
+    st.selectbox( 'Select Price Type',(priceflag_list))
     if st.button('Predict'):
      st.write('Why hello there')
     else:
