@@ -22,7 +22,7 @@ price_data.dropna()
 year_list = price_data['Year'].unique().tolist()
 #increasing prediction year up to 2026,
 x=len(year_list)
- year_list.add(x,2024)
+year_list.add(x,2024)
 year_list.add(x+1,2025)
 year_list.add(x+2,2026)
 price_rating = price_data['unit_price'].unique().tolist()
