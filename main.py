@@ -136,8 +136,8 @@ with st.sidebar:
           y = 2
         data = dict(year_option,y,x)
         df = pd.DataFrame(data, index=[0])
+        df = pd.DataFrame(data, index=[0])
         st.write(x)
-df = pd.DataFrame(data, index=[0])
     else:
         st.write("yes")
     st.write(
