@@ -181,7 +181,7 @@ with col1:
     # Plot the responses for different events and regions
     plot=sns.lineplot(x="Year", y="unit_price",hue="category",data=price_data)
     #st.dataframe(dataframe_price_year, width=400)
-    plot.set_xlim(1, 70)
+    plot.set_ylim(1, 70)
     st.pyplot(plot.get_figure())
 
 with col2:
