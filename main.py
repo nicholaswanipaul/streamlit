@@ -135,7 +135,7 @@ with st.sidebar:
     price_flag_option=st.selectbox('Select Price Type', (priceflag_list))
     if st.button('Click to Predict'):
         #st.write(name_to_code(commodity_option))
-        st.write(commodity_list2)
+        st.write(commodity_option)
     else:
         st.write("yes")
     st.write(
