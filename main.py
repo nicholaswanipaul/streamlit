@@ -134,7 +134,7 @@ with st.sidebar:
           y = 3
         else:
           y = 2
-        data = dict(year_option,y,x)
+        data = dict(Year=year_option,priceflag=y,commodity=x)
         df = pd.DataFrame(data, index=[0])
         df = pd.DataFrame(data, index=[0])
         st.write(x)
