@@ -127,10 +127,10 @@ def name_to_code(commodity):
 # Add the filters. Every widget goes in here
 with st.sidebar:
     year_option=st.selectbox('Select Prediction year', (year_list))
-    coomotity_option=st.selectbox('Select commodity to Predict Price ', (commodity_list))
+    commodity_option=st.selectbox('Select commodity to Predict Price ', (commodity_list))
     price_flag_option=st.selectbox('Select Price Type', (priceflag_list))
     if st.button('Click to Predict'):
-        st.write(name_to_code('Wage'))
+        st.write(name_to_code( commodity_option))
     else:
         st.write("yes")
     st.write(
