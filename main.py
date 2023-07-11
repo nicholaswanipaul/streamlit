@@ -26,13 +26,13 @@ price_rating = price_data['unit_price'].unique().tolist()
 category_list = price_data['category'].unique().tolist()
 commodity_list = price_data['commodity'].unique().tolist()
 
-commodity_list2=["Beans red","Cassava","Cassava dry","Charcoal","Chicken","Cowpeas","Exchange rate","Exchange rate unofficial","Fish dry","Fish fresh","Fuel diesel","Fuel diesel parallel market","Fuel petrol-gasoline","Fuel petrol-gasoline parallel market","Groundnuts shelled","Groundnuts unshelled","Livestock cattle","Livestock goat","Livestock sheep","Maize food aid","Maize meal","Maize white","Meat beef","Meat goat","Milk fresh","Millet white","Milling cost Maize","Milling cost sorghum","Oil vegetable","Okra dry","Peas yellow","Potatoes Irish","Rice","Salt","Sesame","Sorghum","Sorghum brown","Sorghum flour","Sorghum food aid","Sorghum red","Sorghum white","Sugar brown","Sugar food aid","Wage","Wheat flour"]
+#commodity_list2=["Beans red","Cassava","Cassava dry","Charcoal","Chicken","Cowpeas","Exchange rate","Exchange rate unofficial","Fish dry","Fish fresh","Fuel diesel","Fuel diesel parallel market","Fuel petrol-gasoline","Fuel petrol-gasoline parallel market","Groundnuts shelled","Groundnuts unshelled","Livestock cattle","Livestock goat","Livestock sheep","Maize food aid","Maize meal","Maize white","Meat beef","Meat goat","Milk fresh","Millet white","Milling cost Maize","Milling cost sorghum","Oil vegetable","Okra dry","Peas yellow","Potatoes Irish","Rice","Salt","Sesame","Sorghum","Sorghum brown","Sorghum flour","Sorghum food aid","Sorghum red","Sorghum white","Sugar brown","Sugar food aid","Wage","Wheat flour"]
 priceflag_list = price_data['priceflag'].unique().tolist()
 
 # Add the filters. Every widget goes in here
 with st.sidebar:
-    year_option=st.selectbox('Select Prediction year', (year_list))
     commodity=st.selectbox('Select commodity to Predict Price',commodity_list)
+    year_option=st.selectbox('Select Prediction year', (year_list))
     price_flag_option=st.selectbox('Select Price Type', (priceflag_list))
     if st.button('Click to Predict'):
         if commodity == "Beans red":
@@ -127,15 +127,17 @@ with st.sidebar:
           x = 46
         else:
           x = 0  
-        st.write(x)
+        #st.write(x)
         if price_flag_option == "actual":
           y = 1
         elif price_flag_option== "aggregate":
           y = 3
         else:
           y = 2
-        st.write(y)
-        st.write(year_option)
+        data = dict(year_option,y,x)
+        df = pd.DataFrame(data, index=[0])
+        st.write(x)
+df = pd.DataFrame(data, index=[0])
     else:
         st.write("yes")
     st.write(
