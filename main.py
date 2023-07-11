@@ -134,6 +134,7 @@ with st.sidebar:
           y = 3
         else:
           y = 2
+         st.write(y)
     else:
         st.write("yes")
     st.write(
