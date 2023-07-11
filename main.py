@@ -145,9 +145,9 @@ with st.sidebar:
           x = 5
         elif commodity == "Chicken":
           x = 6
-         elif commodity == "Cowpeas":
+        elif commodity == "Cowpeas":
           x = 7
-         elif commodity == "Exchange rate":
+        elif commodity == "Exchange rate":
           x = 8
         elif commodity == "Exchange rate unofficial":
           x = 9
@@ -165,7 +165,7 @@ with st.sidebar:
           x = 15
         elif commodity == "Groundnuts shelled":
           x = 16
-        if commodity == "Groundnuts unshelled":
+        elif commodity == "Groundnuts unshelled":
           x = 17
         elif commodity == "Livestock cattle":
           x = 18
@@ -187,7 +187,7 @@ with st.sidebar:
           x = 26
         elif commodity == "Millet white":
         x = 27
-       elif commodity == "Milling cost Maize":
+        elif commodity == "Milling cost Maize":
           x = 28
         elif commodity == "Milling cost sorghum":
           x = 29
