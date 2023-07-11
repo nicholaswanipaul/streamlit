@@ -142,8 +142,8 @@ with st.sidebar:
         df = pd.DataFrame(data, index=[0])
         df.info()
         loaded_model=joblib.load("foodprices_model.joblib")
-        #predicted_price=loaded_model.predict(df)
-        #st.write(predicted_price)
+        predicted_price=loaded_model.predict(df)
+        st.write(predicted_price)
     else:
         st.write("yes")
     st.write(
