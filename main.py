@@ -29,6 +29,7 @@ priceflag_list = price_data['priceflag'].unique().tolist()
 
 def name_to_code(commodity):
     #commodity = "Sugar food aid"
+    commodity_list = price_data['commodity'].unique().tolist()
     if commodity == "Beans red":
         x = 2
     elif commodity == "Cassava":
@@ -130,7 +131,8 @@ with st.sidebar:
     commodity_option=st.selectbox('Select commodity to Predict Price', (commodity_list))
     price_flag_option=st.selectbox('Select Price Type', (priceflag_list))
     if st.button('Click to Predict'):
-        st.write(name_to_code(commodity_option))
+        #st.write(name_to_code(commodity_option))
+        st.write(commodity_list)
     else:
         st.write("yes")
     st.write(
