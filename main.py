@@ -135,7 +135,101 @@ with st.sidebar:
     commodity_option=st.selectbox('Select commodity to Predict Price',commodity_list)
     price_flag_option=st.selectbox('Select Price Type', (priceflag_list))
     if st.button('Click to Predict'):
+        if commodity == "Beans red":
+          x = 2
+        elif commodity == "Cassava":
+          x = 3
+        elif commodity == "Cassava dry":
+          x = 4
+        elif commodity == "Charcoal":
+          x = 5
+        elif commodity == "Chicken":
+          x = 6
+         elif commodity == "Cowpeas":
+          x = 7
+         elif commodity == "Exchange rate":
+          x = 8
+        elif commodity == "Exchange rate unofficial":
+          x = 9
+        elif commodity == "Fish dry":
+          x = 10
+        elif commodity == "Fish fresh":
+          x = 11
+        elif commodity == "Fuel diesel":
+          x = 12
+        elif commodity == "Fuel diesel parallel market":
+          x = 13
+        elif commodity == "Fuel petrol-gasoline":
+          x = 14
+        elif commodity == "Fuel petrol-gasoline parallel market":
+          x = 15
+        elif commodity == "Groundnuts shelled":
+          x = 16
+        if commodity == "Groundnuts unshelled":
+          x = 17
+        elif commodity == "Livestock cattle":
+          x = 18
+        elif commodity == "Livestock goat":
+          x = 19
+        elif commodity == "Livestock sheep":
+          x = 20
+        elif commodity == "Maize food aid":
+          x = 21
+        elif commodity == "Maize meal":
+          x = 22
+        elif commodity == "Maize white":
+          x = 23
+        elif commodity == "Meat beef":
+          x = 24
+        elif commodity == "Meat goat":
+          x = 25
+        elif commodity == "Milk fresh":
+          x = 26
+        elif commodity == "Millet white":
+        x = 27
+       elif commodity == "Milling cost Maize":
+          x = 28
+        elif commodity == "Milling cost sorghum":
+          x = 29
+        elif commodity == "Oil vegetable":
+          x = 30
+        elif commodity == "Okra dry":
+          x = 31
+        elif commodity == "Peas yellow":
+          x = 32
+        elif commodity == "Potatoes Irish":
+          x = 33
+        elif commodity == "Rice":
+          x = 34
+        elif commodity == "Salt":
+          x = 35
+        elif commodity == "Sesame":
+          x = 36
+        elif commodity == "Sorghum":
+          x = 37
+        elif commodity == "Sorghum brown":
+          x = 38
+        elif commodity == "Sorghum flour":
+          x = 39
+        elif commodity == "Sorghum food aid":
+          x = 40
+        elif commodity == "Sorghum red":
+          x = 41
+        elif commodity == "Sorghum white":
+          x = 42
+        elif commodity == "Sugar brown":
+          x = 43
+        elif commodity == "Sugar food aid":
+          x = 44
+        elif commodity == "Wage":
+          x = 45
+        elif commodity == "Wheat flour":
+          x = 46
+        else:
+          x = 0
+            
         #st.write(name_to_code(commodity_option))
+        
         st.write(commodity_option=="Potatoes Irish")
     else:
         st.write("yes")
