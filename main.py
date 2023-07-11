@@ -135,6 +135,7 @@ with st.sidebar:
         else:
           y = 2
         st.write(y)
+        st.write(year_option)
     else:
         st.write("yes")
     st.write(
