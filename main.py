@@ -24,7 +24,21 @@ year_list.insert(x + 1, 2025)
 year_list.insert(x + 2, 2026)
 price_rating = price_data['unit_price'].unique().tolist()
 category_list = price_data['category'].unique().tolist()
-commodity_list = price_data['commodity'].unique().tolist()
+#commodity_list = price_data['commodity'].unique().tolist()
+
+ commodity_list=["Beans red","Cassava","Cassava dry","Charcoal","Chicken","Cowpeas",
+                    "Exchange rate","Exchange rate unofficial","Fish dry",Fish fresh",
+                    "Fuel diesel","Fuel diesel parallel market",
+                        "Fuel petrol-gasoline","Fuel petrol-gasoline parallel market",
+                        "Groundnuts shelled","Groundnuts unshelled","Livestock cattle",
+                        "Livestock goat","Livestock sheep","Maize food aid",
+                        "Maize meal","Maize white",Meat beef,"Meat goat","Milk fresh",
+                        "Millet white","Milling cost Maize",
+                        "Milling cost sorghum",
+                        "Oil vegetable","Okra dry","Peas yellow","Potatoes Irish","Rice","Salt",
+                        "Sesame","Sorghum","Sorghum brown","Sorghum flour","Sorghum food aid",
+                        "Sorghum red","Sorghum white","Sugar brown",
+                        Sugar food aid,"Wage","Wheat flour"]
 priceflag_list = price_data['priceflag'].unique().tolist()
 
 def name_to_code(commodity):
@@ -44,6 +58,7 @@ def name_to_code(commodity):
         x = 7
     elif commodity == "Exchange rate":
         x = 8
+    
     if commodity == "Exchange rate unofficial":
         x = 9
     elif commodity == "Fish dry":
