@@ -26,6 +26,7 @@ price_rating = price_data['unit_price'].unique().tolist()
 category_list = price_data['category'].unique().tolist()
 commodity_list = price_data['commodity'].unique().tolist()
 priceflag_list = price_data['priceflag'].unique().tolist()
+
 def name_to_code(commodity):
     #commodity = "Sugar food aid"
     if commodity == "Beans red":
@@ -125,9 +126,9 @@ def name_to_code(commodity):
 
 # Add the filters. Every widget goes in here
 with st.sidebar:
-    st.selectbox('Select Prediction year', (year_list))
-    st.selectbox('Select commodity to Predict Price ', (commodity_list))
-    st.selectbox('Select Price Type', (priceflag_list))
+    year_option=st.selectbox('Select Prediction year', (year_list))
+    coomotity_option=st.selectbox('Select commodity to Predict Price ', (commodity_list))
+    price_flag_option=st.selectbox('Select Price Type', (priceflag_list))
     if st.button('Click to Predict'):
         st.write(name_to_code('Wage'))
     else:
