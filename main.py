@@ -3,99 +3,92 @@ import pandas as pd
 import plotly.express as px
 import matplotlib.pyplot as plt
 
-
 # To set a webpage title, header and subtitle
-st.set_page_config(page_title = "Food price analysis",layout = 'wide')
+st.set_page_config(page_title="Food price analysis", layout='wide')
 st.header("Commodity Price Prediction")
 st.subheader("Interact with this dashboard using the widgets on the sidebar")
 
-
-#read in the file
+# read in the file
 price_data = pd.read_csv("https://raw.githubusercontent.com/nicholaswanipaul/streamlit/main/food_prices_cleaned.csv")
 price_data.info()
 price_data.duplicated()
 price_data.count()
 price_data.dropna()
 
-
 # Creating sidebar widget filters from price dataset
 year_list = price_data['Year'].unique().tolist()
-#increasing prediction year up to 2026,
-x=len(year_list)
-year_list.insert(x,2024)
-year_list.insert(x+1,2025)
-year_list.insert(x+2,2026)
+# increasing prediction year up to 2026,
+x = len(year_list)
+year_list.insert(x, 2024)
+year_list.insert(x + 1, 2025)
+year_list.insert(x + 2, 2026)
 price_rating = price_data['unit_price'].unique().tolist()
 category_list = price_data['category'].unique().tolist()
 commodity_list = price_data['commodity'].unique().tolist()
-priceflag_list=price_data['priceflag'].unique().tolist()
+priceflag_list = price_data['priceflag'].unique().tolist()
 
 # Add the filters. Every widget goes in here
 with st.sidebar:
-    st.selectbox( 'Select Prediction year',(year_list))
-    commodity_selected=st.selectbox( 'Select Prediction year',(year_list))
-    st.selectbox( 'Select commodity to Predict Price ',(commodity_list))
-    st.selectbox( 'Select Price Type',(priceflag_list))
+    st.selectbox('Select Prediction year', (year_list))
+    commodity_selected = st.selectbox('Select Prediction year', (year_list))
+    st.selectbox('Select commodity to Predict Price ', (commodity_list))
+    st.selectbox('Select Price Type', (priceflag_list))
     if st.button('Predict'):
-     st.write('Why hello there')
+        st.write('Why hello there')
     else:
-     st.write(x)
-    
-    st.write("Select a range on the slider (it represents prices) to view the total number of commodities that falls within that range")
-    #create a slider to hold user scores
-    new_price_rating = st.slider(label = "Choose a value:",
-                                  min_value = 1.0,
-                                  max_value = 35000.0,
-                                 value = (3.0,4.0))
-
+        st.write("yes")
+    st.write(
+        "Select a range on the slider (it represents prices) to view the total number of commodities that falls within that range")
+    # create a slider to hold user scores
+    new_price_rating = st.slider(label="Choose a value:",
+                                 min_value=1.0,
+                                 max_value=35000.0,
+                                 value=(3.0, 4.0))
 
     st.write("Select your preferred commodity categories and year to view the commodity prices that year")
-    #create a multiselect option that holds genre
+    # create a multiselect option that holds genre
     new_category_list = st.multiselect('Choose Genre:',
-                                        category_list, default = ['cereals and tubers', 'pulses and nuts', 'non-food', 'oil and fats'])
+                                       category_list,
+                                       default=['cereals and tubers', 'pulses and nuts', 'non-food', 'oil and fats'])
 
-    #create a selectbox option that holds all unique years
+    # create a selectbox option that holds all unique years
     year = st.selectbox('Choose a Year', year_list, 0)
 
-#Configure the slider widget for interactivity
+# Configure the slider widget for interactivity
 commodity_info = (price_data['unit_price'].between(*new_price_rating))
 
-
-
-#Configure the selectbox and multiselect widget for interactivity
+# Configure the selectbox and multiselect widget for interactivity
 new_category_year = (price_data['category'].isin(new_category_list)) & (price_data['Year'] == year)
 
-
-#VISUALIZATION SECTION
-#group the columns needed for visualizations
-col1, col2 = st.columns([2,3])
+# VISUALIZATION SECTION
+# group the columns needed for visualizations
+col1, col2 = st.columns([2, 3])
 with col1:
     st.write("""#### Lists of commodities filtered by year and categories """)
     dataframe_price_year = price_data[new_category_year].groupby(['commodity', 'unit_price'])['Year'].sum()
     dataframe_price_year = dataframe_price_year.reset_index()
-    st.dataframe(dataframe_price_year, width = 400)
+    st.dataframe(dataframe_price_year, width=400)
 
 with col2:
     st.write("""#### User score of movies and their genre """)
     rating_count_year = price_data[commodity_info].groupby('category')['unit_price'].count()
     rating_count_year = rating_count_year.reset_index()
-    figpx = px.line(rating_count_year, x = 'category', y = 'unit_price')
+    figpx = px.line(rating_count_year, x='category', y='unit_price')
     st.plotly_chart(figpx)
 
- # creating a bar graph with matplotlib
+# creating a bar graph with matplotlib
 st.write("""
 Average Movie Budget, Grouped by Genre
     """)
-#avg_budget = movies_data.groupby('genre')['budget'].mean().round()
-#avg_budget = avg_budget.reset_index()
-#genre = avg_budget['genre']
-#avg_bud = avg_budget['budget']
+# avg_budget = movies_data.groupby('genre')['budget'].mean().round()
+# avg_budget = avg_budget.reset_index()
+# genre = avg_budget['genre']
+# avg_bud = avg_budget['budget']
 
-#fig = plt.figure(figsize = (19, 10))
+# fig = plt.figure(figsize = (19, 10))
 
-#plt.bar(genre, avg_bud, color = 'maroon')
-#plt.xlabel('genre')
-#plt.ylabel('budget')
-#plt.title('Matplotlib Bar Chart Showing The Average Budget of Movies in Each Genre')
-#st.pyplot(fig)
-
+# plt.bar(genre, avg_bud, color = 'maroon')
+# plt.xlabel('genre')
+# plt.ylabel('budget')
+# plt.title('Matplotlib Bar Chart Showing The Average Budget of Movies in Each Genre')
+# st.pyplot(fig)
