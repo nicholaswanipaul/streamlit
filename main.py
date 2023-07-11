@@ -26,7 +26,7 @@ price_rating = price_data['unit_price'].unique().tolist()
 category_list = price_data['category'].unique().tolist()
 #commodity_list = price_data['commodity'].unique().tolist()
 
- commodity_list=["Beans red","Cassava","Cassava dry","Charcoal","Chicken","Cowpeas",
+commodity_list=["Beans red","Cassava","Cassava dry","Charcoal","Chicken","Cowpeas",
                     "Exchange rate","Exchange rate unofficial","Fish dry",Fish fresh",
                     "Fuel diesel","Fuel diesel parallel market",
                         "Fuel petrol-gasoline","Fuel petrol-gasoline parallel market",
