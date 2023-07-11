@@ -31,7 +31,7 @@ priceflag_list = price_data['priceflag'].unique().tolist()
 
 def name_to_code(commodity):
     #commodity = "Sugar food aid"
-    commodity_list = price_data['commodity'].unique().tolist()
+    #commodity_list = price_data['commodity'].unique().tolist()
     if commodity == "Beans red":
         x = 2
     elif commodity == "Cassava":
