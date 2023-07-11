@@ -7,6 +7,7 @@ from sklearn import datasets, linear_model
 from sklearn.model_selection import RandomizedSearchCV
 import os
 import joblib
+import seaborn as sns
 # To set a webpage title, header and subtitle
 st.set_page_config(page_title="Food price analysis", layout='wide')
 st.header("Commodity Price Prediction")
