@@ -39,7 +39,7 @@ with st.sidebar:
     if st.button('Predict'):
      st.write('Why hello there')
     else:
-    st.write(x)
+     st.write(x)
     
     st.write("Select a range on the slider (it represents prices) to view the total number of commodities that falls within that range")
     #create a slider to hold user scores
