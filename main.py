@@ -178,7 +178,7 @@ with col1:
    # dataframe_price_year = price_data[new_category_year].groupby(['commodity', 'unit_price'])['Year'].sum()
     #dataframe_price_year = dataframe_price_year.reset_index()
     # Plot the responses for different events and regions
-    sns.lineplot(x="unit_price", y="Year",hue="category",data=price_data)
+    plot=sns.lineplot(x="unit_price", y="Year",hue="category",data=price_data)
     #st.dataframe(dataframe_price_year, width=400)
     st.pyplot(plot.get_figure())
 
