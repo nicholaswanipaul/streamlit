@@ -29,106 +29,6 @@ commodity_list = price_data['commodity'].unique().tolist()
 commodity_list2=["Beans red","Cassava","Cassava dry","Charcoal","Chicken","Cowpeas","Exchange rate","Exchange rate unofficial","Fish dry","Fish fresh","Fuel diesel","Fuel diesel parallel market","Fuel petrol-gasoline","Fuel petrol-gasoline parallel market","Groundnuts shelled","Groundnuts unshelled","Livestock cattle","Livestock goat","Livestock sheep","Maize food aid","Maize meal","Maize white","Meat beef","Meat goat","Milk fresh","Millet white","Milling cost Maize","Milling cost sorghum","Oil vegetable","Okra dry","Peas yellow","Potatoes Irish","Rice","Salt","Sesame","Sorghum","Sorghum brown","Sorghum flour","Sorghum food aid","Sorghum red","Sorghum white","Sugar brown","Sugar food aid","Wage","Wheat flour"]
 priceflag_list = price_data['priceflag'].unique().tolist()
 
-def name_to_code(commodity):
-    #commodity = "Sugar food aid"
-    #commodity_list = price_data['commodity'].unique().tolist()
-    commodity=commodity
-    if commodity == "Beans red":
-        x = 2
-    elif commodity == "Cassava":
-        x = 3
-    elif commodity == "Cassava dry":
-        x = 4
-    elif commodity == "Charcoal":
-        x = 5
-    elif commodity == "Chicken":
-        x = 6
-    elif commodity == "Cowpeas":
-        x = 7
-    elif commodity == "Exchange rate":
-        x = 8
-    
-    if commodity == "Exchange rate unofficial":
-        x = 9
-    elif commodity == "Fish dry":
-        x = 10
-    elif commodity == "Fish fresh":
-        x = 11
-    elif commodity == "Fuel diesel":
-        x = 12
-    elif commodity == "Fuel diesel parallel market":
-        x = 13
-    elif commodity == "Fuel petrol-gasoline":
-        x = 14
-    elif commodity == "Fuel petrol-gasoline parallel market":
-        x = 15
-    elif commodity == "Groundnuts shelled":
-        x = 16
-    if commodity == "Groundnuts unshelled":
-        x = 17
-    elif commodity == "Livestock cattle":
-        x = 18
-    elif commodity == "Livestock goat":
-        x = 19
-    elif commodity == "Livestock sheep":
-        x = 20
-    elif commodity == "Maize food aid":
-        x = 21
-    elif commodity == "Maize meal":
-        x = 22
-    elif commodity == "Maize white":
-        x = 23
-    elif commodity == "Meat beef":
-        x = 24
-    if commodity == "Meat goat":
-        x = 25
-    elif commodity == "Milk fresh":
-        x = 26
-    elif commodity == "Millet white":
-        x = 27
-    elif commodity == "Milling cost Maize":
-        x = 28
-    elif commodity == "Milling cost sorghum":
-        x = 29
-    elif commodity == "Oil vegetable":
-        x = 30
-    elif commodity == "Okra dry":
-        x = 31
-    elif commodity == "Peas yellow":
-        x = 32
-    if commodity == "Potatoes Irish":
-        x = 33
-    elif commodity == "Rice":
-        x = 34
-    elif commodity == "Salt":
-        x = 35
-    elif commodity == "Sesame":
-        x = 36
-    elif commodity == "Sorghum":
-        x = 37
-    elif commodity == "Sorghum brown":
-        x = 38
-    elif commodity == "Sorghum flour":
-        x = 39
-    elif commodity == "Sorghum food aid":
-        x = 40
-    elif commodity == "Sorghum red":
-        x = 41
-    elif commodity == "Sorghum white":
-        x = 42
-    elif commodity == "Sugar brown":
-        x = 43
-    elif commodity == "Sugar food aid":
-        x = 44
-    elif commodity == "Wage":
-        x = 45
-    elif commodity == "Wheat flour":
-        x = 46
-    else:
-        x = 0
-    return x
-
-
 # Add the filters. Every widget goes in here
 with st.sidebar:
     year_option=st.selectbox('Select Prediction year', (year_list))
@@ -226,11 +126,14 @@ with st.sidebar:
         elif commodity == "Wheat flour":
           x = 46
         else:
-          x = 0
-            
-        #st.write(name_to_code(commodity_option))
-        
+          x = 0  
         st.write(x)
+        if price_flag_option == "actual":
+          y = 1
+        elif price_flag_option== "aggregate":
+          y = 3
+        else:
+          y = 2
     else:
         st.write("yes")
     st.write(
