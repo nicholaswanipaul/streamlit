@@ -137,7 +137,7 @@ with st.sidebar:
         data = dict(Year=year_option,priceflag=y,commodity=x)
         df = pd.DataFrame(data, index=[0])
         df = pd.DataFrame(data, index=[0])
-        st.write(x)
+        st.write(df)
     else:
         st.write("yes")
     st.write(
