@@ -33,12 +33,13 @@ priceflag_list=price_data['priceflag'].unique().tolist()
 # Add the filters. Every widget goes in here
 with st.sidebar:
     st.selectbox( 'Select Prediction year',(year_list))
+    commodity_selected=st.selectbox( 'Select Prediction year',(year_list))
     st.selectbox( 'Select commodity to Predict Price ',(commodity_list))
     st.selectbox( 'Select Price Type',(priceflag_list))
     if st.button('Predict'):
      st.write('Why hello there')
     else:
-     st.write('Goodbye')
+    st.write(x)
     
     st.write("Select a range on the slider (it represents prices) to view the total number of commodities that falls within that range")
     #create a slider to hold user scores
