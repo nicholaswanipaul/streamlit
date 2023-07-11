@@ -138,6 +138,7 @@ with st.sidebar:
         df = pd.DataFrame(data, index=[0])
         df = pd.DataFrame(data, index=[0])
         st.write(df)
+        print(df)
     else:
         st.write("yes")
     st.write(
