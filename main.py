@@ -178,12 +178,13 @@ with col1:
    #st.write("""#### Lists of commodities filtered by year and categories """)
    # dataframe_price_year = price_data[new_category_year].groupby(['commodity', 'unit_price'])['Year'].sum()
     #dataframe_price_year = dataframe_price_year.reset_index()
-    # Plot the responses for different events and regions
-    plot=sns.lineplot(x="Year", y="unit_price",hue="category",data=price_data)
-    #st.dataframe(dataframe_price_year, width=400)
-    plot.set_ylim(1, 20000)
-    plot.set_xlim(2013, 2024)
-    st.pyplot(plot.get_figure())
+
+     fig = px.scatter_mapbox(df3, lat="latitude", lon="longitude", hover_name="admin2", hover_data=["admin1", "admin2"], color_discrete_sequence=["fuchsia"], zoom=3, height=300)
+     fig.update_layout(mapbox_style="open-street-map")
+     fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+     fig.show()
+     st.plotly_chart(fig)
+     #st.pyplot(plot.get_figure())
 
 with col2:
     st.write("""#### User score of movies and their genre """)
