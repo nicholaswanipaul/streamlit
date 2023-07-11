@@ -140,7 +140,7 @@ with st.sidebar:
           y = 2
         data = dict(Year=year_option,priceflag=y,commodity=x)
         df = pd.DataFrame(data, index=[0])
-        df = pd.DataFrame(data, index=[0])
+        df.info()
         loaded_model=joblib.load("foodprices_model.joblib")
         #predicted_price=loaded_model.predict(df)
         #st.write(predicted_price)
