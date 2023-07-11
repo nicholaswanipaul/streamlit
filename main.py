@@ -186,7 +186,7 @@ with st.sidebar:
         elif commodity == "Milk fresh":
           x = 26
         elif commodity == "Millet white":
-        x = 27
+          x = 27
         elif commodity == "Milling cost Maize":
           x = 28
         elif commodity == "Milling cost sorghum":
@@ -230,7 +230,7 @@ with st.sidebar:
             
         #st.write(name_to_code(commodity_option))
         
-        st.write(commodity_option=="Potatoes Irish")
+        st.write(x)
     else:
         st.write("yes")
     st.write(
