@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import matplotlib.pyplot as plt
-
+import os
+import joblib
 # To set a webpage title, header and subtitle
 st.set_page_config(page_title="Food price analysis", layout='wide')
 st.header("Commodity Price Prediction")
@@ -137,7 +138,7 @@ with st.sidebar:
         data = dict(Year=year_option,priceflag=y,commodity=x)
         df = pd.DataFrame(data, index=[0])
         df = pd.DataFrame(data, index=[0])
-        st.write(df)
+        loaded_model=joblib.load("foodprices_model.joblib")
         print(df)
     else:
         st.write("yes")
