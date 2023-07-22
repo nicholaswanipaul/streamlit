@@ -186,7 +186,7 @@ with col1:
      st.plotly_chart(fig)
      #st.pyplot(plot.get_figure())
 
-with col2:
+with col3:
     st.write("""#### User score of movies and their genre """)
     rating_count_year = price_data[commodity_info].groupby('category')['unit_price'].count()
     rating_count_year = rating_count_year.reset_index()
