@@ -174,7 +174,7 @@ new_category_year = (price_data['category'].isin(new_category_list)) & (price_da
 # VISUALIZATION SECTION
 # group the columns needed for visualizations
 col1, col2,col3 = st.columns([1,1,2])
-with col1:
+with col2:
    #st.write("""#### Lists of commodities filtered by year and categories """)
    # dataframe_price_year = price_data[new_category_year].groupby(['commodity', 'unit_price'])['Year'].sum()
     #dataframe_price_year = dataframe_price_year.reset_index()
@@ -186,7 +186,7 @@ with col1:
      st.plotly_chart(fig)
      #st.pyplot(plot.get_figure())
 
-with col3:
+with col1:
     st.write("""#### User score of movies and their genre """)
     rating_count_year = price_data[commodity_info].groupby('category')['unit_price'].count()
     rating_count_year = rating_count_year.reset_index()
@@ -194,9 +194,7 @@ with col3:
     st.plotly_chart(figpx)
 
      # creating a bar graph with matplotlib
-    st.write("""
-Average Movie Budget, Grouped by Genre
-    """)
+    st.write("""Average Movie Budget, Grouped by Genre """)
 # avg_budget = movies_data.groupby('genre')['budget'].mean().round()
 # avg_budget = avg_budget.reset_index()
 # genre = avg_budget['genre']
