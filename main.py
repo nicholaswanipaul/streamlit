@@ -179,7 +179,7 @@ with col1:
    # dataframe_price_year = price_data[new_category_year].groupby(['commodity', 'unit_price'])['Year'].sum()
     #dataframe_price_year = dataframe_price_year.reset_index()
 
-     fig = px.scatter_mapbox(price_data, lat="latitude", lon="longitude", hover_name="admin2", hover_data=["admin1", "admin2"], color_discrete_sequence=["fuchsia"], zoom=3, height=300)
+     fig = px.scatter_mapbox(price_data, lat="latitude", lon="longitude", hover_name="admin2", hover_data=["admin1", "admin2"], color_discrete_sequence=["fuchsia"], zoom=3, height=300, zoom=3)
      fig.update_layout(mapbox_style="open-street-map")
      fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
      fig.show()
