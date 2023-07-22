@@ -173,7 +173,7 @@ new_category_year = (price_data['category'].isin(new_category_list)) & (price_da
 
 # VISUALIZATION SECTION
 # group the columns needed for visualizations
-col1, col2,col3 = st.columns([1,3,2])
+col1, col2,col3 = st.columns([1,1,2])
 with col1:
    #st.write("""#### Lists of commodities filtered by year and categories """)
    # dataframe_price_year = price_data[new_category_year].groupby(['commodity', 'unit_price'])['Year'].sum()
