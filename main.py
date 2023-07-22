@@ -191,7 +191,7 @@ with col1:
     rating_count_year = price_data[commodity_info].groupby('category')['unit_price'].count()
     rating_count_year = rating_count_year.reset_index()
     figpx = px.line(rating_count_year, x='category', y='unit_price')
-    st.plotly_chart(figpx)
+    st.plotly_chart(figpx, use_container_width=True)
 
      # creating a bar graph with matplotlib
     st.write("""Average Movie Budget, Grouped by Genre """)
