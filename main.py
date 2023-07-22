@@ -193,8 +193,8 @@ with col2:
     figpx = px.line(rating_count_year, x='category', y='unit_price')
     st.plotly_chart(figpx)
 
-# creating a bar graph with matplotlib
-st.write("""
+     # creating a bar graph with matplotlib
+    st.write("""
 Average Movie Budget, Grouped by Genre
     """)
 # avg_budget = movies_data.groupby('genre')['budget'].mean().round()
